@@ -8,15 +8,14 @@ Features:
 4. History: Persistent history with append/read/write support.
 5. Autocomplete: Tab completion for commands and file paths.
 
-Build & Run - 
-
 Prerequisites
 1. GCC Compiler
 2. CMake (Version 3.13+)
 3. Readline Library
 
-mkdir build
-cd build
-cmake ..
-make
-./shell
+Build & Run:
+1. mkdir build
+2. cd build
+3. cmake ..
+4. make
+5. ./shell
