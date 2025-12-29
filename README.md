@@ -1,34 +1,29 @@
-[![progress-banner](https://backend.codecrafters.io/progress/shell/19c5ceb0-5232-4a5f-b773-088240e7e1ae)](https://app.codecrafters.io/users/codecrafters-bot?r=2qF)
+A custom shell implementation in C that implements standard shell behaviour with persistent history, 
+pipelining, tab completion and general shell commands.
 
-This is a starting point for C solutions to the
-["Build Your Own Shell" Challenge](https://app.codecrafters.io/courses/shell/overview).
+Features:
+1. Built-in Commands: cd, pwd, echo, type, history, clear, exit.
+2. Pipelining: Support for multiple commands.
+3. Redirection: Input/Output redirection.
+4. History: Persistent history with append/read/write support.
+5. Autocomplete: Tab completion for commands and file paths.
 
-In this challenge, you'll build your own POSIX compliant shell that's capable of
-interpreting shell commands, running external programs and builtin commands like
-cd, pwd, echo and more. Along the way, you'll learn about shell command parsing,
-REPLs, builtin commands, and more.
+Build & Run - 
 
-**Note**: If you're viewing this repo on GitHub, head over to
-[codecrafters.io](https://codecrafters.io) to try the challenge.
+Prerequisites
+1. GCC Compiler
+2. CMake (Version 3.13+)
+3. Readline Library
 
-# Passing the first stage
+# 1. Create a build directory
+mkdir build
+cd build
 
-The entry point for your `shell` implementation is in `src/main.c`. Study and
-uncomment the relevant code, and push your changes to pass the first stage:
+# 2. Generate build files
+cmake ..
 
-```sh
-git commit -am "pass 1st stage" # any msg
-git push origin master
-```
+# 3. Compile
+make
 
-Time to move on to the next stage!
-
-# Stage 2 & beyond
-
-Note: This section is for stages 2 and beyond.
-
-1. Ensure you have `cmake` installed locally
-1. Run `./your_program.sh` to run your program, which is implemented in
-   `src/main.c`.
-1. Commit your changes and run `git push origin master` to submit your solution
-   to CodeCrafters. Test output will be streamed to your terminal.
+# 4. Run the shell
+./shell
