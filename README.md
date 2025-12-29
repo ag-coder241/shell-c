@@ -15,15 +15,15 @@ Prerequisites
 2. CMake (Version 3.13+)
 3. Readline Library
 
-# 1. Create a build directory
+// Create a build directory
 mkdir build
 cd build
 
-# 2. Generate build files
+// Generate build files
 cmake ..
 
-# 3. Compile
+// Compile
 make
 
-# 4. Run the shell
+// Run the shell
 ./shell
