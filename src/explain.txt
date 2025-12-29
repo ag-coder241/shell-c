@@ -1,0 +1,38 @@
+
+1. Redirect stdout
+parse args --> see for '>' ---> open the file ---> fork a child process and redirect the output to the file instead 
+of the terminal
+
+0 - stdin
+1 - stdout 
+2 - stderr
+
+> overwrites
+>> appends
+
+2. Autocompletion
+using readline
+An executable is any file in $PATH that has execute permission (X_OK)
+
+when a TAB is pressed for the first time (state = 0), we see every directory to see for the matching executables
+and as TABs are pressed we cycle between all the possible matches at this particular prefix
+but as the user change the prefix and whenever TAB is again pressed old matches are reset and we find a new set of matches 
+so the event of finding matches is TAB dependent not continous.
+
+we have to match for both builtin commands and external executables by scanning
+
+3. pipeline
+
+two command pipeline - 
+parent creates a pipe.it has a READ end and a WRITE end open
+it forks child1. it also has to fds, we change one fd to pipe write end
+child1 closes original pipefd[0] and pipefd[1] but it still holds write end via stdout
+child2 also has fds, closes pipefd[0] and pipefd[1] but holds the read end via stdin
+so finally the parent has to close it's fd so that child1 has one write fd and child2 has one read fd
+and it's balanced so when process 1 get's over write end get close and similarly process 2 reads and closes
+the read end.
+
+for builtins we create the subprocess, but we exit early so that the it's input/output is redirected
+without changing anything.
+
+multi-command pipeline - understand the code

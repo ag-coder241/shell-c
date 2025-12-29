@@ -1,0 +1,15 @@
+# Build artifacts
+build/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+myshell
+
+# IDE settings
+.vscode/
+.DS_Store
+
+# Shell History files 
+.shell_history
+.myshell_history
